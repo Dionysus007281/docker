@@ -1,0 +1,19 @@
+services:
+    semaphore:
+        container_name: semaphore
+        ports:
+            - 3000:3000
+        image: public.ecr.aws/semaphore/pro/server:latest
+        environment:
+            SEMAPHORE_DB_DIALECT: mysql
+            SEMAPHORE_DB_HOST: 10.2.20.2
+            SEMAPHORE_DB_NAME: semaphore
+            SEMAPHORE_DB_USER: ${dbuser}
+            SEMAPHORE_DB_PASS: ${dbpassword}
+            SEMAPHORE_ADMIN: ${admin}
+            SEMAPHORE_ADMIN_PASSWORD: ${adminpassword}
+            SEMAPHORE_ADMIN_NAME: Patrick Lankhorst
+            SEMAPHORE_ADMIN_EMAIL: admin@localhost
+            SEMAPHORE_ACCESS_KEY_ENCRYPTION: ${encrkey}
+            ANSIBLE_HOST_KEY_CHECKING: "False"
+        restart: unless-stopped
