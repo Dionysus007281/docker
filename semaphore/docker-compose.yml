@@ -28,6 +28,7 @@ services:
       SEMAPHORE_ADMIN_EMAIL: admin@localhost
       SEMAPHORE_ADMIN: ${admin}
       SEMAPHORE_ACCESS_KEY_ENCRYPTION: ${encrkey}
+      ANSIBLE_HOST_KEY_CHECKING: "False"
       TZ: Europe/Amsterdam
     depends_on:
       - mysql
