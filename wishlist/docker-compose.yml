@@ -11,3 +11,4 @@ services:
       # ORIGIN: https://wishlist.example.com
       ORIGIN: https://wishlist.lankhorst.org # The URL your users will be connecting to
       TOKEN_TIME: 168 # hours until signup and password reset tokens expire
+    restart: unless-stopped
